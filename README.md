@@ -21,7 +21,7 @@ In the command part, you can put placeholders `{}` for a changed file path.
 * `command` can contain placefolder `{}` for changed file name.
 
 ```sh
-% watchf **/*.js `eslint {}`
+% watchf **/*.js 'eslint {}'
 ```
 
 ## Options
