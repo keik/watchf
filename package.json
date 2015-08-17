@@ -1,0 +1,25 @@
+{
+  "name": "watchf",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {
+    "lint": "eslint *js"
+  },
+  "author": {
+    "name": "keik",
+    "email": "k4t0.kei@gmail.com",
+    "url": "keik.info"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^1.1.0"
+  },
+  "dependencies": {
+    "chokidar": "^1.0.5",
+    "colors": "^1.1.2",
+    "minimist": "^1.1.3",
+    "xtend": "^4.0.0"
+  }
+}

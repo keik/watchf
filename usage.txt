@@ -1,0 +1,13 @@
+Usage: watchf [files] [command] {Options}
+
+ - [files] can be globs.
+ - [command] can contain placefolder `{}` for changed file name.
+
+Options:
+
+     --ignore, -i  Replace a file with an empty stub. Files can be globs.
+
+     --verbose -d  Enable source maps that allow you to debug your files
+                   separately.
+
+       --help, -h  Show this message.
