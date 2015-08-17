@@ -5,9 +5,8 @@ Usage: watchf [files] [command] {Options}
 
 Options:
 
-     --ignore, -i  Replace a file with an empty stub. Files can be globs.
+     --ignore, -i  Ignore to watch. Files can be globs.
 
-     --verbose -d  Enable source maps that allow you to debug your files
-                   separately.
+    --verbose, -v  Output verbose messages.
 
-       --help, -h  Show this message.
+       --help, -h  Show help message.
