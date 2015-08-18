@@ -20,7 +20,9 @@ function watchf (globs, cmd, opts) {
   chokidar.watch(globs)
     .on('change', function (path) {
       cmd = cmd.replace(/{}/, path);
-      i('changed', path, 'spawn', cmd);
+
+      i('changed', path, '->', '\'' + cmd + '\'');
+
       childProcess.spawn(SH, ['-c', cmd], {
         stdio: 'inherit'
       });

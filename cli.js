@@ -15,11 +15,11 @@ var argv = require('minimist')(process.argv.slice(2)),
     },
     opts = xtend(defaults, argv),
     globs = argv._,
-    cmd = argv.c;
+    cmd = argv.c || '';
 
 // show help
 if (globs.length < 1 || opts.h || opts.help) {
-  fs.createReadStream('./usage.txt')
+  return fs.createReadStream('./usage.txt')
     .on('end', function () {
       process.exit(1);
     })
