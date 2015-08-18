@@ -1,9 +1,11 @@
-Usage: watchf [files] [command] {Options}
+Usage: watchf <files> -c <command> [options]
 
- - [files] can be globs.
- - [command] can contain placefolder `{}` for changed file name.
+  <files> can be globs.
+  <command> can contain placefolder `{}` for changed file name.
 
 Options:
+
+    --command, -c  Command to run when change files.
 
      --ignore, -i  Ignore to watch. Files can be globs.
 

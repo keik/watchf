@@ -15,7 +15,7 @@ var argv = require('minimist')(process.argv.slice(2)),
     },
     opts = xtend(defaults, argv),
     globs = argv._,
-    cmd = argv._.pop();
+    cmd = argv.c;
 
 // show help
 if (globs.length < 1 || opts.h || opts.help) {
