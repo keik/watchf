@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs'),
+    path = require('path'),
     xtend = require('xtend'),
     watchf = require('./');
 
@@ -17,7 +18,7 @@ var argv = require('minimist')(process.argv.slice(2), {boolean: ['v', 'h'], alia
 
 // show help
 if (globs.length < 1 || opts.h) {
-  return fs.createReadStream('./usage.txt')
+  return fs.createReadStream(path.join(__dirname, '/usage.txt'))
     .on('end', function () {
       process.exit(1);
     })
