@@ -9,15 +9,18 @@ var SH = process.env.SHELL;
 var isv;
 
 function watchf (globs, cmd, opts) {
-  isv = opts.v || opts.verbose;
+  isv = opts.v;
+
+  var ignores = ['node_modules', 'flycheck_*'].concat(opts.i);
 
   v('globs   :', globs);
   v('command :', cmd);
   v('opts    :', opts);
+  v('ignores :', ignores);
 
   i('watching change on', globs, '...');
 
-  chokidar.watch(globs)
+  chokidar.watch(globs, {ignored: ignores})
     .on('change', function (path) {
       cmd = cmd.replace(/{}/, path);
 

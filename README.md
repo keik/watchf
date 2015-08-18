@@ -21,11 +21,12 @@ In the command part, you can put placeholders `{}` for a changed file path.
 * `command` can contain placefolder `{}` for changed file name.
 
 ```sh
-% watchf **/*.js 'eslint {}'
+% watchf **/*.js **/*.es -i vendor -c 'eslint {}'
 ```
 
 ## Options
 
-* `--ignore, -i (Not implemented)` Ignore to watch. Files can be globs.
+* `--command, -c` Command to run when change files.
+* `--ignore, -i` Ignore to watch. Files can be globs.
 * `--verbose, -d` Output verbose messages.
 * `--help, -h` Show help message.
