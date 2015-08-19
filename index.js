@@ -22,11 +22,11 @@ function watchf (globs, cmd, opts) {
 
   chokidar.watch(globs, {ignored: ignores})
     .on('change', function (path) {
-      cmd = cmd.replace(/{}/, path);
+      var newCmd = cmd.replace(/{}/, path);
 
-      i('changed', path, '->', '\'' + cmd + '\'');
+      i('changed', path, '->', '\'' + newCmd + '\'');
 
-      childProcess.spawn(SH, ['-c', cmd], {
+      childProcess.spawn(SH, ['-c', newCmd], {
         stdio: 'inherit'
       });
     });
