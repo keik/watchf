@@ -1,6 +1,6 @@
 {
   "name": "watchf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Watch change on files and spawn commands.",
   "main": "index.js",
   "bin": {
