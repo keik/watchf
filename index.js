@@ -11,7 +11,7 @@ var isv;
 function watchf (globs, cmd, opts) {
   isv = opts.v;
 
-  var ignores = ['node_modules', 'flycheck_*'].concat(opts.i);
+  var ignores = ['**/node_modules/**', '**/flycheck_**'].concat(opts.i);
 
   v('globs   :', globs);
   v('command :', cmd);
@@ -26,7 +26,7 @@ function watchf (globs, cmd, opts) {
 
       i('changed', path, '->', '\'' + newCmd + '\'');
 
-      childProcess.spawn(SH, ['-c', newCmd], {
+      var p = childProcess.spawn(SH, ['-c', newCmd], {
         stdio: 'inherit'
       });
     });
@@ -36,11 +36,11 @@ function watchf (globs, cmd, opts) {
 function v () {
 
   /* eslint no-console: [0] */
-  if (isv) console.log.apply(console, Array.prototype.concat.apply(['[watchfy]'.verbose], arguments));
+  if (isv) console.log.apply(console, Array.prototype.concat.apply(['[watchf]'.verbose], arguments));
 }
 
 function i () {
 
   /* eslint no-console: [0] */
-  console.log.apply(console, Array.prototype.concat.apply(['[watchfy]'.info], arguments));
+  console.log.apply(console, Array.prototype.concat.apply(['[watchf]'.info], arguments));
 }
