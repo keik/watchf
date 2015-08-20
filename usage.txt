@@ -8,7 +8,7 @@ Options:
     --command, -c  Command to run when change files.
 
      --ignore, -i  Ignore to watch. Files can be globs.
-                   Default values are `['node_modules', 'flycheck_*']`
+                   Default values are `['**/node_modules/**', '**/flycheck_**']`.
 
     --verbose, -v  Output verbose messages.
 
