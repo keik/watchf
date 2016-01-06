@@ -3,7 +3,8 @@ module.exports = watchf;
 var childProcess = require('child_process'),
     chokidar = require('chokidar');
 
-var SH = process.env.SHELL;
+var SH = process.env.SHELL || process.env.COMSPEC;
+var C_OPT = process.env.SHELL && !process.env.COMSPEC ? '-c' : '/c';
 
 /** verbose flag */
 var isv;
@@ -26,7 +27,7 @@ function watchf (globs, cmd, opts) {
 
       i('changed', path, '->', '\'' + newCmd + '\'');
 
-      var p = childProcess.spawn(SH, ['-c', newCmd], {
+      var p = childProcess.spawn(SH, [C_OPT, newCmd], {
         stdio: 'inherit'
       });
     });
